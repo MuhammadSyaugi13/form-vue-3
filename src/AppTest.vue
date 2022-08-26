@@ -5,15 +5,15 @@
       <div class="col-md-8">
         <div class="form-group">
           <label>Name</label>
-          <input type="text" class="form-control" />
+          <input type="text" class="form-control" :value="product.name" @input="product.name = $event.target.value"/>
         </div>
         <div class="form-group">
           <label>Price</label>
-          <input type="number" class="form-control" />
+          <input type="number" class="form-control" :value="product.price" @input="product.price = $event.target.value"/>
         </div>
         <div class="form-group">
           <label>Description</label>
-          <textarea class="form-control" rows="5"></textarea>
+          <textarea class="form-control" rows="5" :value="product.description" @input="product.description = $event.target.value"></textarea>
         </div>
         <div class="form-group">
           <label>Image</label>
@@ -83,7 +83,11 @@
 export default {
   data() {
     return {
-      product: {},
+      product: {
+        name: 'Produk 1',
+        price: 10000,
+        description:'keterangan produk 1',
+      },
       categories: [
         { value: 1, text: "Category 1" },
         { value: 2, text: "Category 2" },
