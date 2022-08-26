@@ -3,22 +3,34 @@
     <h1 class="border-bottom mb-4">Form Product</h1>
     <div class="row">
       <div class="col-md-8">
+        <!-- name -->
         <div class="form-group">
+          <base-input type="text" v-model.trim="product.name" label="Name"></base-input>
+        </div>
+        <!-- <div class="form-group">
           <label>Name</label>
           <input type="text" class="form-control" :value="product.name" @input="product.name = $event.target.value"/>
-        </div>
+         </div> -->
+        <!-- last name -->
+
+        <!-- price -->
         <div class="form-group">
-          <label>Price</label>
-          <input type="number" class="form-control" :value="product.price" @input="product.price = $event.target.value"/>
+          <base-input type="number" v-model.number="product.price" label="Price"></base-input>
+          <!-- <label>Price</label>
+          <input type="number" class="form-control" :value="product.price" @input="product.price = $event.target.value"/> -->
         </div>
+        <!-- last price -->
         <div class="form-group">
           <label>Description</label>
           <textarea class="form-control" rows="5" :value="product.description" @input="product.description = $event.target.value"></textarea>
         </div>
+        <!-- image -->
         <div class="form-group">
-          <label>Image</label>
-          <input type="text" class="form-control" />
+          <base-input type="text" v-model="product.image" label="Image"></base-input>
+          <!-- <label>Image</label>
+          <input type="text" class="form-control" /> -->
         </div>
+        <!-- last image -->
         <div class="form-group">
           <label>Category</label>
           <select class="form-control">
@@ -87,6 +99,7 @@ export default {
         name: 'Produk 1',
         price: 10000,
         description:'keterangan produk 1',
+        image: ""
       },
       categories: [
         { value: 1, text: "Category 1" },
