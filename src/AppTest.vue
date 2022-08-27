@@ -31,14 +31,26 @@
           <input type="text" class="form-control" /> -->
         </div>
         <!-- last image -->
-        <div class="form-group">
+
+        <!-- select category -->
+        <base-select label="Category"
+                     v-model="product.categoryId"
+                     :options="categories"
+                     placeholder="Select a Category"
+        ></base-select>
+        <!-- <div class="form-group">
           <label>Category</label>
-          <select class="form-control">
+          <select class="form-control" 
+                  :value="product.categoryId"
+                  @change="product.categoryId = $event.target.value"
+          >
             <option value="1">Category 1</option>
             <option value="2">Category 2</option>
             <option value="3">Category 3</option>
           </select>
-        </div>
+        </div> -->
+        <!-- lastselect category -->
+
         <div class="form-group">
           <label>Vendor</label>
           <select class="form-control">
@@ -99,7 +111,8 @@ export default {
         name: 'Produk 1',
         price: 10000,
         description:'keterangan produk 1',
-        image: ""
+        image: "",
+        categoryId: ""
       },
       categories: [
         { value: 1, text: "Category 1" },
